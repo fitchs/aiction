@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="container">
+    <form class="form" [formGroup]="form">
+        <input style="margin: 24px" matInpuat type="file" formControlName="image" placeholder="image">
+        <input  style="margin: 24px" matInput formControlName="prompt" placeholder="prompt">
+        <button type="submit" mat-raised-button color="primary" (click)="submit()">Primary</button>
+    </form>
+</div>
+
