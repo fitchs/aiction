@@ -3,6 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { APP_CONFIG } from '../environments/environment';
 import { ElectronService } from './services/electron.service';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { GptService } from './services/gpt.service';
+import { MatDialog } from '@angular/material/dialog';
+import { OpenaiApiKeyDialogComponent } from './openai-api-key-dialog/openai-api-key-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +19,9 @@ export class AppComponent {
   });
 
   constructor(
-    private electronService: ElectronService
+    private electronService: ElectronService,
+    private gptService: GptService,
+    private dialog: MatDialog
   ) {
   }
 
@@ -39,6 +44,10 @@ export class AppComponent {
         image: file
       });
     }
+  }
+
+  public openSetApiKeyDialog(): void {
+    this.dialog.open(OpenaiApiKeyDialogComponent);
   }
 
   public submit(): void {

@@ -1,4 +1,5 @@
 <div class="container">
+    <button mat-raised-button color="primary" (click)="openSetApiKeyDialog()">Set api key</button>
     <form class="form" [formGroup]="form">
         <input style="margin: 24px" matInpuat type="file" formControlName="image" placeholder="image">
         <input  style="margin: 24px" matInput formControlName="prompt" placeholder="prompt">
